@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methi Mix Powder</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1947164179488409');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1947164179488409&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#e8fff1,#ffffff,#e6fff8);
+}
+
+/* HERO SECTION */
+.hero{
+position:relative;
+text-align:center;
+padding:0;
+overflow:hidden;
+height:500px;
+}
+
+/* IMAGE SLIDER BACKGROUND */
+.hero-slider{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+}
+.hero-slider img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 0.8s ease-in-out;
+}
+
+/* RED BOX BELOW HERO IMAGE */
+.hero-red-box{
+position:relative;
+background:red;
+color:white;
+text-align:center;
+padding:25px 20px;
+margin-top:0;
+border-radius:0; /* কোন কোনা গোল নেই */
+width:100%;
+box-sizing:border-box;
+}
+.hero-red-box h1{
+font-size:28px;
+margin-bottom:12px;
+font-weight:bold;
+line-height:1.3;
+}
+.hero-red-box .price{
+font-size:32px;
+font-weight:bold;
+color:orange;
+text-shadow: 0 0 12px #ff4500, 0 0 25px #ff6347;
+margin:15px 0;
+display:inline-block;
+}
+.hero-red-box .order-btn{
+background:#ff9800;
+color:white;
+padding:16px 30px;
+font-size:20px;
+border-radius:50px;
+text-decoration:none;
+display:inline-block;
+font-weight:bold;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+animation:pulse 1.5s infinite;
+}
+
+/* MARQUEE */
+.marquee-box{
+width:100%;
+background:#ffeb3b;
+padding:25px 0;
+overflow:hidden;
+white-space:nowrap;
+font-size:24px;
+font-weight:bold;
+color:#000;
+}
+.marquee-text{
+display:inline-block;
+padding-left:100%;
+animation:scrollText 30s linear infinite;
+}
+@keyframes scrollText{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* BENEFIT TITLE */
+.benefit-title{
+width:100%;
+background:red;
+color:white;
+text-align:center;
+padding:22px 0;
+font-size:28px;
+font-weight:bold;
+}
+
+/* BENEFIT BOX */
+.benefits{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding:40px 20px;
+}
+.benefit-box{
+width:320px;
+padding:20px;
+border-radius:20px;
+color:white;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+.benefit-box img{
+width:100%;
+border-radius:15px;
+margin-bottom:15px;
+}
+.benefit-btn{
+margin-top:15px;
+display:inline-block;
+background:white;
+color:black;
+padding:12px 25px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+animation:pulse 1.5s infinite;
+}
+
+/* REVIEW */
+.review-section{
+padding:40px 20px;
+text-align:center;
+}
+.review-section h2{
+font-size:26px;
+margin-bottom:20px;
+}
+.review-slider{
+position:relative;
+height:280px;
+max-width:500px;
+margin:auto;
+}
+.review{
+position:absolute;
+width:100%;
+opacity:0;
+transition:1s;
+}
+.review.active{opacity:1}
+.review img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FORM */
+.form-section{
+max-width:600px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+input,textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border-radius:15px;
+border:1px solid #ccc;
+font-size:16px;
+}
+.submit-btn{
+background:#0f9d58;
+color:white;
+padding:15px;
+border:none;
+border-radius:50px;
+font-size:18px;
+width:100%;
+transition:0.15s ease;   /* নতুন যোগ */
+}
+
+/* শুধু ক্লিক করলে ছোট হবে */
+.submit-btn:active{
+transform:scale(0.92);
+}
+/* BSTI CERTIFICATE SECTION */
+.bsti-section{
+max-width:600px;
+margin:30px auto;
+text-align:center;
+}
+.bsti-section h3{
+font-size:22px;
+font-weight:bold;
+margin-bottom:15px;
+color:#0f9d58;
+}
+.bsti-section img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* SUCCESS MESSAGE */
+.success-message{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#0f9d58;
+color:white;
+padding:35px;
+border-radius:20px;
+font-size:20px;
+text-align:center;
+display:none;
+z-index:9999;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
+.footer{
+background:#111;
+color:#ddd;
+padding:30px 20px;
+text-align:center;
+}
+.footer a{
+color:#00c853;
+text-decoration:none;
+font-weight:bold;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <!-- IMAGE SLIDER BACKGROUND -->
+  <div class="hero-slider">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCdu72MYW1QCRz1j2U9JvtHIoQ0J43HJFZqfy33xSvbsoQ6tZHVDbn0yPZRYOuBKp-ajiz7aDa3T0e53enOpEg0Vh6dxDt2Wws6o-iDH-bYqE__G8J-GY9YSeqjES9sFAh1mB-X3im3o03mFK3NyCpnb4KkD-nt-6-stCiVaW8k6Ymg3L-UR697LDR2Nc/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.48%20(2).jpeg" class="active">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnIC1xTFaHTxwDYLYeyRS51R1QdHCuIbpaRS1eyiIiQ6Cc5J6kSjQn_Ni6BBYhUVutqVajSEjAzrFaBxRaN_GOQP3JZANwb1BVE2WI7HyMxLeh_ib5i5ykPASU91ZVUKc8-2v0e804Ghl3rYdrThE8pp_FnY5waeHcSHLZwu_mcP8hVYBEbo0Q1oxXBPg/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.48.jpeg">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCyh-j7Eh5rDe2JJudB2MP4qKV2Dqe7kRbzzpzF486xMYkRpEpgerbJmwHZCUum5xI42bi-5qpKBsK5GwRG5mowyOobM2mdfaxRATpCEqESmJkXvCwTmZmoyQdfMXYajCPPTXfvj_8I9oS7q37HL7ya8H0thJX_wUnpK38VqeppePOVKclie3HU67n_xY/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.49.jpeg">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK-LPaFlb2IyBUUGh1ynA_UzUtBufgJmYnt_Fe1dYq7dS1ZD7748-vph10fIJ4Pv_xoZs3o-ag6eYGk5_run3-vaNO0r0QInPPZYGdhvM6RVbVRRL_DLUBKS3icH2u-DO54RL8yXOqS5yT7M6R0nCKHMfNl4Shl2eXMRzVNLm0daTiCkh2TrTqWs7S8GM/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.48%20(1).jpeg">
+  </div>
+</div>
+
+<!-- RED BOX BELOW HERO IMAGE -->
+<div class="hero-red-box">
+<h1>১৫টি প্রিমিয়াম ভেষজে তৈরি ১০০% ন্যাচারাল ফর্মুলা<br>
+গ্যাস্ট্রিক,কোষ্ঠকাঠিন্য অ্যাসিডিটি ও বদহজমে কার্যকর হার্বাল</h1>
+<div class="price">মাত্র ৳৪৯৯</div><br>
+<a href="#order" class="order-btn">এখানে অর্ডার করুন 👈</a>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-box">
+<div class="marquee-text">
+🌙 সবাইকে আসসালামুয়ালাইকুম 🌙 সবাইকে মাহে রমজানের শুভেচ্ছা 🌙 
+আমাদের অনেকের অতিরিক্ত গ্যাস্ট্রিক, কোষ্ঠকাঠিন্য ও বুকের ভিতর জ্বালাপোড়া সমস্যা আছে 🤕 
+রমজান মাসে এই সমস্যা বেড়ে যায় 😔 
+আমাদের পণ্যটি শতভাগ হালাল ✅ 
+সেবনের দিন থেকেই কার্যকারিতা বুঝতে পারবেন ইনশাআল্লাহ 🤲 
+আল্লাহ ভরসা 🌿
+</div>
+</div>
+
+<!-- BENEFIT SECTION -->
+<div class="benefit-title">✅পণ্যের মূল উপকারিতা</div>
+<div class="benefits">
+<div class="benefit-box" style="background:#ff6f61;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDqK6R4UiRuu6lZYEVm6RqhmhUmxxGHTwkMDkKFUGtcGf-YQi9UmHDMlDNvRviT8-oQqrDGifYHiusDIdaWJ8ear7_nWlj1QoV6hBzaaLhwbp5RDxTeTVOMFGIOGqFZBn0tgLfGYYkbLBDi7WzIR_hdX5evWKj5iEJxoY71aYEfw6SHitc_xbum4_8Yc0/s830/WhatsApp%20Image%202026-02-22%20at%2011.06.45.jpeg">
+<h3>✅গ্যাস ও অ্যাসিডিটি কমাতে সহায়ক</h3>
+<p>অতিরিক্ত গ্যাস, বুক জ্বালা ও টক ঢেকুর থেকে দ্রুত আরাম দিতে সহায়তা করে।</p>
+<a href="#order" class="benefit-btn">অর্ডার করতে চাই 👈</a>
+</div>
+<div class="benefit-box" style="background:#6a5acd;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwskKc8Nb7YT2JKWOyLHvrFB4fTtCtSXeZEvZlFZkVkNpT3UCcVeCPIVX8kJueDFQ7znLSjjhYuKU5FKD2f-D0Kacp2V3986uv9-wMQn8KTLi1x71J0b9QgXGQ_0XaagMd_LmCWwEvbIif1JP7r38B-NDOwZucWAffvj-IDrY7rUYeuysnDHMweH9WUQo/s1200/WhatsApp%20Image%202026-02-22%20at%2011.06.45%20(1).jpeg">
+<h3>✅কোষ্ঠকাঠিন্য এবং পেট হাপায় কার্যকর</h3>
+<p>কোষ্ঠকাঠিন্যের জন্য ১০০% কার্যকারী, এবং পেট ফাঁপা সমস্যা নিমিষে দূর করে</p>
+<a href="#order" class="benefit-btn">অর্ডার করতে চাই 👈</a>
+</div>
+<div class="benefit-box" style="background:#20b2aa;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0ggDL4IjA6ly4-B3pvA0Hz1M6SfAZHmvR2Z04tFCf9R59MrNaAXalbreQlk1FQzyGbM_Y81lvyZ7eHAiSuuq7z_UUAq0Zl4Tqf84tNecP0Tgz8_r9GPLuU8XNiHTIC4qeagLzohdzRKDemKo0uvy_cLSj24Cd3gd_NubkQHSxVbyk5zzNuzqJzJMJGvU/s686/WhatsApp%20Image%202026-02-22%20at%2011.06.46.jpeg">
+<h3>✅হজমশক্তি উন্নত করে</h3>
+<p>নিয়মিত সেবনে হজম প্রক্রিয়া স্বাভাবিক রাখতে সাহায্য করে।</p>
+<a href="#order" class="benefit-btn">অর্ডার করতে চাই 👈</a>
+</div>
+</div>
+
+<!-- REVIEW -->
+<div class="review-section">
+<h2>আমাদের কাস্টমারের রিভিউ</h2>
+<div class="review-slider">
+<div class="review active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZCtT5E__I2QPMvnEstEZTDm8ZNtRJEneh5b5JcuQjgg6w4k9sWvhoOvztDQNcZoI-S8sgwVqpx5We15RCvG4iXonxA06n2x8eBFEUkdgudnEnC_Wb7tzBQy1kd6Y2qcmHgPdIhwDX8XusNx7-kfnh7soYvruKCFg95sfODPULxmT-ltnmXuU-YpomPDo/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.50%20(1).jpeg"></div>
+<div class="review"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4S0OuRe6u7aCOpPUggpwaoMxaTnfuWb9OE9V70FyJtJKAQQathLbPxv7d_HuKpc487gJ7Ilz7oRMYR5-L3Fg1VksEYRHOKP7j5kLEPt-uCrMG7Kq_CdhfjXTgIeC_G3iNNXJ-q-WqNZQ0RXVi8EjtJoSDQHJQHJmIoPsmjG14sf_C0FcTyCeN2mNJG7M/s1600/WhatsApp%20Image%202026-02-22%20at%2011.43.18.jpeg"></div>
+<div class="review"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinzaXE64Jp3UsJYOz9ajSUo8PkcaRCfC0F2tDP38Fshh46NZcBSJKwdz2BHtVOaMf4WDodOLuOmWOV9niV1FlgH3AtN5FhKcKFV2yWDyeyTivEIh2NdmKDmH9Cv8B2tPMAa-BckX3AjtV5n37E59keJCL4tUNA2qHj5PJgpcEEVauDzUTJpyOhLaUDCG0/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.51.jpeg"></div>
+<div class="review"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivLmes9SRZAXXQAB6wq4UV1sn-F8srRMWarJYM_ZZy0IyKjGUd75M5B0NIbEqg0C3LCq9mD8PadlmwvlZYZH84sZFSTW151BbBj-Nrh44_kSDioH3Mn7VFpo1O9zs1HEr5LnqpxmOVUEp9jje9jiU4qO_hyPkhVT44hV78bNMfhUleED3zSPiuVV9CMlw/s1600/WhatsApp%20Image%202026-02-22%20at%2011.43.18%20(1).jpeg"></div>
+<div class="review"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2Cx1BdvxTF5zxMPjv5aQ1OIqa0ts8I87qydMFADkqw4wdMZwkOkKw0OST1hBcud2bAufmg8qzHFUMgTcgy9YJEMy7ppS8UrcB4uGVRUfuKP9fIfAFhyphenhyphenogEUdGKIYDG9inghSsTL4LPea8hppBZow33drL5LKqfSsc2xJ7M5nLQADJH3JYRXkaPZrt-mE/s1599/WhatsApp%20Image%202026-02-22%20at%2011.06.50.jpeg"></div>
+</div>
+</div>
+
+<!-- ORDER FORM -->
+<div id="order" class="form-section">
+  <h2>অর্ডার করতে ফর্ম পূরণ করুন</h2>
+  <form id="orderForm" action="https://script.google.com/macros/s/AKfycbxM5V85KxOBUgIQn1N0Ev9m6ge-4guoWSmruQUqWddeMJgNuLkaxadCvMr4G_ouQKOWjQ/exec" method="POST">
+    <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
+    <input type="text" name="phone" placeholder="মোবাইল নাম্বার লিখুন" required>
+    <textarea name="address" placeholder="সম্পূর্ণ ঠিকানা লিখুন" required></textarea>
+    <button type="submit" class="submit-btn">কনফার্ম অর্ডার</button>
+  </form>
+</div>
+
+<!-- SUCCESS TEMPLATE -->
+<div id="successOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center; display:flex;">
+  <div style="background:white; padding:40px 30px; border-radius:25px; max-width:500px; width:90%; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.4); font-family:'Segoe UI',sans-serif; position:relative;">
+    <div style="font-size:60px; font-weight:bold; color:green; margin-bottom:15px;">✅</div>
+    <h2 style="margin:10px 0; font-size:24px; color:#333; line-height:1.4;">আপনার অর্ডারটি সফলভাবে সাবমিট হয়েছে!!!</h2>
+    <p style="font-size:16px; color:#555; margin-bottom:20px;">আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবে ইনশাল্লাহ</p>
+    <div style="text-align:left; font-size:16px; color:#333; background:#f3f3f3; padding:20px; border-radius:15px;">
+      <p>✅আপনার দেওয়া তথ্য ✅</p>
+      <p>🟩 আপনার নাম: <span id="userName"></span></p>
+      <p>🟩 আপনার মোবাইল নাম্বার: <span id="userPhone"></span></p>
+      <p>🟩 আপনার ঠিকানা: <span id="userAddress"></span></p>
+    </div>
+    <button id="backBtn" style="margin-top:25px; background:#0f9d58; color:white; padding:12px 25px; border:none; border-radius:50px; font-size:16px; cursor:pointer;">Back</button>
+  </div>
+</div>
+
+<style>
+/* Submit button style */
+.submit-btn {
+  background: #0f9d58;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  width: 100%;
+  transition: transform 0.15s ease, background 0.3s ease;
+  position: relative;
+}
+.submit-btn:active {
+  transform: scale(0.92);
+}
+.submit-btn.loading {
+  background:red !important;
+}
+</style>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const form = this;
+    const submitBtn = form.querySelector(".submit-btn");
+
+    // ক্লিক মুহূর্তে লাল
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+
+    // Google Sheets এ পাঠানো
+    fetch(form.action, { method:"POST", body: formData })
+    .then(() => {
+        // 2 সেকেন্ড পরে overlay দেখানো
+        setTimeout(() => {
+            const overlay = document.getElementById("successOverlay");
+            overlay.style.display = "flex";
+            document.getElementById("userName").textContent = formData.get("name");
+            document.getElementById("userPhone").textContent = formData.get("phone");
+            document.getElementById("userAddress").textContent = formData.get("address");
+        }, 2000);
+    })
+    .catch(() => {
+        alert("কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন।");
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+    });
+});
+
+// BACK BUTTON - overlay বন্ধ করে landing page দেখাবে
+document.getElementById("backBtn").addEventListener("click", function(){
+    document.getElementById("successOverlay").style.display = "none";
+    const submitBtn = document.querySelector(".submit-btn");
+    submitBtn.classList.remove("loading");
+    submitBtn.disabled = false;
+    document.getElementById("orderForm").reset();
+});
+</script>
+
+</body>
+</html>
