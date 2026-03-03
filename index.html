@@ -1,151 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
+<title>Free TTS With Download</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free AI Text To Speech Online | Professional TTS Tool</title>
-<meta name="description" content="Convert text to speech online free. Professional AI Text to Voice generator with multiple voices, speed control and download option.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{
+font-family:Arial;
 background:linear-gradient(135deg,#667eea,#764ba2);
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-padding:20px;
+height:100vh;
 }
-.container{
-background:white;
-width:100%;
-max-width:800px;
+.box{
+background:#fff;
 padding:30px;
-border-radius:20px;
-box-shadow:0 20px 50px rgba(0,0,0,0.2);
+width:100%;
+max-width:600px;
+border-radius:15px;
 }
-h1{text-align:center;margin-bottom:20px;color:#333;font-size:28px;}
 textarea{
 width:100%;
-height:150px;
-padding:15px;
-border-radius:10px;
-border:1px solid #ccc;
-resize:none;
-margin-bottom:20px;
-font-size:16px;
+height:120px;
+margin-bottom:15px;
+padding:10px;
 }
-.controls{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:20px;}
-select,input{flex:1;padding:10px;border-radius:8px;border:1px solid #ccc;}
-.buttons{display:flex;gap:15px;}
+select,button{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+}
 button{
-flex:1;
-padding:12px;
-border:none;
-border-radius:8px;
 background:#667eea;
-color:white;
-font-size:16px;
+color:#fff;
+border:none;
 cursor:pointer;
-transition:0.3s;
-}
-button:hover{background:#764ba2;}
-footer{margin-top:20px;text-align:center;font-size:14px;color:#666;}
-@media(max-width:600px){
-.controls{flex-direction:column}
-.buttons{flex-direction:column}
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-<h1>Free AI Text To Speech Generator</h1>
+<div class="box">
+<h2>Free AI TTS + Download</h2>
 
-<textarea id="text" placeholder="Type your text here..."></textarea>
+<textarea id="text" placeholder="Enter text..."></textarea>
 
-<div class="controls">
-<select id="voiceSelect"></select>
-<input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
-<input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1">
-</div>
+<select id="lang">
+<option value="en-US">English</option>
+<option value="hi-IN">Hindi</option>
+<option value="ar-SA">Arabic</option>
+<option value="fr-FR">French</option>
+<option value="de-DE">German</option>
+</select>
 
-<div class="buttons">
-<button onclick="speakText()">🔊 Speak</button>
-<button onclick="stopText()">⛔ Stop</button>
-<button onclick="downloadAudio()">⬇ Download</button>
-</div>
+<button onclick="speak()">Speak</button>
+<button onclick="downloadAudio()">Download MP3</button>
 
-<footer>
-© 2026 Your Brand | Free Online Text To Speech Tool
-</footer>
 </div>
 
 <script>
-const voiceSelect = document.getElementById("voiceSelect");
-let voices = [];
 let mediaRecorder;
 let audioChunks = [];
 
-function loadVoices() {
-voices = speechSynthesis.getVoices();
-voiceSelect.innerHTML = "";
-voices.forEach((voice, index) => {
-const option = document.createElement("option");
-option.value = index;
-option.textContent = voice.name + " (" + voice.lang + ")";
-voiceSelect.appendChild(option);
-});
-}
-speechSynthesis.onvoiceschanged = loadVoices;
+function speak(){
+let text = document.getElementById("text").value;
+let lang = document.getElementById("lang").value;
 
-function speakText() {
-const text = document.getElementById("text").value;
-if(text === "") return alert("Please enter text");
+if(!text) return alert("Enter text");
 
-const utterance = new SpeechSynthesisUtterance(text);
-utterance.voice = voices[voiceSelect.value];
-utterance.rate = document.getElementById("rate").value;
-utterance.pitch = document.getElementById("pitch").value;
-
+let utterance = new SpeechSynthesisUtterance(text);
+utterance.lang = lang;
 speechSynthesis.speak(utterance);
 }
 
-function stopText(){
-speechSynthesis.cancel();
-}
+async function downloadAudio(){
+let text = document.getElementById("text").value;
+let lang = document.getElementById("lang").value;
 
-async function downloadAudio() {
-const text = document.getElementById("text").value;
-if(text === "") return alert("Please enter text");
+if(!text) return alert("Enter text");
 
-const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+// capture system audio (browser workaround)
+let stream = await navigator.mediaDevices.getUserMedia({ audio:true });
 mediaRecorder = new MediaRecorder(stream);
 audioChunks = [];
 
-mediaRecorder.ondataavailable = event => {
-audioChunks.push(event.data);
+mediaRecorder.ondataavailable = e => {
+audioChunks.push(e.data);
 };
 
 mediaRecorder.onstop = () => {
-const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-const audioUrl = URL.createObjectURL(audioBlob);
-const a = document.createElement("a");
-a.href = audioUrl;
-a.download = "tts-audio.webm";
+let blob = new Blob(audioChunks, { type:'audio/webm' });
+let url = URL.createObjectURL(blob);
+
+let a = document.createElement("a");
+a.href = url;
+a.download = "tts.mp3";
 a.click();
 };
 
 mediaRecorder.start();
-speakText();
 
-setTimeout(() => {
+let utterance = new SpeechSynthesisUtterance(text);
+utterance.lang = lang;
+speechSynthesis.speak(utterance);
+
+setTimeout(()=>{
 mediaRecorder.stop();
 stream.getTracks().forEach(track => track.stop());
-}, 5000); // record 5 seconds (can adjust)
+}, 5000);
 }
 </script>
 
